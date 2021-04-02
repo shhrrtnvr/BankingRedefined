@@ -52,7 +52,7 @@ public class TransactionServiceBean implements TransactionService {
 
     @Override
     public List<TransactionDto> findByAccountId(Long accountId) {
-        return transactionRepository.findByAccountId(accountId)
+        return transactionRepository.findByAccountAccountId(accountId)
                 .stream()
                 .map(TransactionMapper::toTransactionDto)
                 .collect(Collectors.toList());

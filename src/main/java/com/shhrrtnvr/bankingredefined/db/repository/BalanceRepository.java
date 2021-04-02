@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface BalanceRepository extends CrudRepository<Balance, Long> {
-    List<Balance> findByAccountId(Long accountId);
-
-    Balance findByAccountIdAndCurrency(Long accountId, String currency);
+    Balance findByAccountAccountIdAndCurrency(Long accountId, String currency);
 }

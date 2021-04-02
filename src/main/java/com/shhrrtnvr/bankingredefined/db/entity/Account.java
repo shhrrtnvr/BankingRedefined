@@ -17,7 +17,7 @@ public class Account {
     private long accountId;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customerId")
     private Customer customer;
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)

@@ -6,7 +6,6 @@ import com.shhrrtnvr.bankingredefined.db.services.BalanceService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -30,12 +29,7 @@ public class BalanceServiceBean implements BalanceService {
     }
 
     @Override
-    public List<Balance> findByAccountId(Long accountId) {
-        return balanceRepository.findByAccountId(accountId);
-    }
-
-    @Override
     public Balance findByAccountIdAndCurrency(Long accountId, String currency) {
-        return balanceRepository.findByAccountIdAndCurrency(accountId, currency);
+        return balanceRepository.findByAccountAccountIdAndCurrency(accountId, currency);
     }
 }
