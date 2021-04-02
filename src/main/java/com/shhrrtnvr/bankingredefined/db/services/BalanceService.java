@@ -7,6 +7,6 @@ import java.util.List;
 public interface BalanceService {
     Balance saveBalance(Balance balance);
     List<Balance> saveBalance(List<Balance> balances);
-    List<Balance> findByAccountEd(Long accountId);
-    Long findByAccountIdAndCurrency(Long accountId, String currency);
+    List<Balance> findByAccountId(Long accountId);
+    Balance findByAccountIdAndCurrency(Long accountId, String currency);
 }

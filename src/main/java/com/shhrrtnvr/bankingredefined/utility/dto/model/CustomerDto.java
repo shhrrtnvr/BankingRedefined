@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Currency;
 import java.util.List;
 
 @Data
@@ -13,9 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class CustomerDto {
+    private Long customerId;
     private String firstname;
     private String lastname;
     private String country;
-    private List<Currency> currencies;
-
+    private List<String> currencies;
 }

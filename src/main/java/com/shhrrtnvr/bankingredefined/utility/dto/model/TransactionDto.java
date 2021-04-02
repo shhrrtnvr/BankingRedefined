@@ -17,6 +17,5 @@ public class TransactionDto {
     private BigDecimal amount;
     private String currency;
     private String directionOfTransaction;
-    private String description;
     private BigDecimal balanceAfterTransaction;
 }
