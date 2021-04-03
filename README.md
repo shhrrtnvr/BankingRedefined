@@ -1,7 +1,7 @@
-#Description
+# Description
 A banking software implementing REST api.
 
-#Technology 
+# Technology 
 <ul>
 <li>Java 11</li>
 <li>Spring Boot</li>
@@ -9,19 +9,19 @@ A banking software implementing REST api.
 <li>Postgres</li>
 </ul>
 
-#Database
+# Database
 ![Diagram](./erd.png)
 
-#API
+# API
 https://www.getpostman.com/collections/c234cf8d6f907d759914
 
-##Health
+## Health
 *Get request to /health*<br>
 You will receive OK if server is alive
 
-##Create Account
+## Create Account
 Creates a bank account for the customer and returns an object together with balance object.
-####Input
+#### Input
 *Post request to /accounts with a json file contraining following fields* 
 ```json
 {
@@ -33,7 +33,7 @@ Creates a bank account for the customer and returns an object together with bala
 }
 ```
 
-####Output
+#### Output
 ```json
 {
     "accountId": 5,
@@ -50,11 +50,11 @@ Creates a bank account for the customer and returns an object together with bala
     ]
 }
 ```
-##Get account
+## Get account
 Return the account object.
-####input
+#### Input
 *Get request to /accounts/{account_id} with account id as path variable*
-####output
+#### Output
 ```json
 {
     "accountId": 2,
@@ -71,9 +71,9 @@ Return the account object.
     ]
 }
 ```
-##Create Transaction
+## Create Transaction
 Create a transaction on the account and return the transaction object.
-####Input
+#### Input
 *Post a json object to /transactions with following fields*<br>
 ***Remember direction is of 2 types: IN and OUT**
 ```json
@@ -84,7 +84,7 @@ Create a transaction on the account and return the transaction object.
     "direction": "OUT"
 }
 ```
-####Output
+#### Output
 ```json
 {
     "transactionId": 12,
@@ -95,11 +95,11 @@ Create a transaction on the account and return the transaction object.
     "balance": 300.00
 }
 ```
-##Get Transaction
+## Get Transaction
 Returns a list of all transactions of an account.
-####Input
+#### Input
 *Get request to /transaction/{account_id} with account id as path variable*
-####Output
+#### Output
 ```json
 [
     {
