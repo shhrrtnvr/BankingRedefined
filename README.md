@@ -13,7 +13,7 @@ A banking software implementing REST api.
 ![Diagram](./erd.png)
 
 # API
-https://www.getpostman.com/collections/c234cf8d6f907d759914
+https://documenter.getpostman.com/view/14063258/TzCP8Tgb
 
 ## Health
 *Get request to /health*<br>
