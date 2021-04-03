@@ -12,12 +12,15 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class Account {
+    private static final String SEQ_ACCOUNT = "seq_account_id";
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_ACCOUNT)
+    @SequenceGenerator(name = SEQ_ACCOUNT, sequenceName = SEQ_ACCOUNT, allocationSize = 1)
     private long accountId;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "customerId")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)

@@ -4,6 +4,7 @@ import com.shhrrtnvr.bankingredefined.db.entity.Balance;
 import com.shhrrtnvr.bankingredefined.db.repository.BalanceRepository;
 import com.shhrrtnvr.bankingredefined.db.services.BalanceService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.stream.StreamSupport;
 @Service
 @AllArgsConstructor
 public class BalanceServiceBean implements BalanceService {
+    @Autowired
     private final BalanceRepository balanceRepository;
 
     @Override

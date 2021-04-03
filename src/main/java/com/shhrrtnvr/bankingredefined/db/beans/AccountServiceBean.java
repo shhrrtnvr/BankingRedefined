@@ -4,12 +4,14 @@ import com.shhrrtnvr.bankingredefined.db.entity.Account;
 import com.shhrrtnvr.bankingredefined.db.repository.AccountRepository;
 import com.shhrrtnvr.bankingredefined.db.services.AccountService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
 public class AccountServiceBean implements AccountService {
 
+    @Autowired
     private final AccountRepository accountRepository;
 
     @Override

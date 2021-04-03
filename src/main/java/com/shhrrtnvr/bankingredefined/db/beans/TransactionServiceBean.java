@@ -9,6 +9,7 @@ import com.shhrrtnvr.bankingredefined.db.services.TransactionService;
 import com.shhrrtnvr.bankingredefined.utility.dto.mapper.TransactionMapper;
 import com.shhrrtnvr.bankingredefined.utility.dto.model.TransactionDto;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -18,8 +19,12 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class TransactionServiceBean implements TransactionService {
+    @Autowired
     private final TransactionRepository transactionRepository;
+
     private final BalanceService balanceService;
+
+    @Autowired
     private final AccountRepository accountRepository;
 
 

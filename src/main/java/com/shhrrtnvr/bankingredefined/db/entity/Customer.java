@@ -12,8 +12,10 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Customer {
+    private static final String SEQ_CUSTOMER = "seq_customer_id";
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_CUSTOMER)
+    @SequenceGenerator(name = SEQ_CUSTOMER, sequenceName = SEQ_CUSTOMER, allocationSize = 1)
     private long customerId;
 
     private String firstName;

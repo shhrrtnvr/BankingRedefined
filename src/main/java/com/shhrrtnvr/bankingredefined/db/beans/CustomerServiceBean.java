@@ -13,6 +13,7 @@ import com.shhrrtnvr.bankingredefined.utility.dto.mapper.CustomerMapper;
 import com.shhrrtnvr.bankingredefined.utility.dto.model.AccountResponseDto;
 import com.shhrrtnvr.bankingredefined.utility.dto.model.CustomerDto;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +22,9 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class CustomerServiceBean implements CustomerService {
+    @Autowired
     private final CustomerRepository customerRepository;
+
     private final AccountService accountService;
     private final BalanceService balanceService;
 

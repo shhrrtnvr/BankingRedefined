@@ -12,12 +12,14 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class Balance {
+    private static final String SEQ_BALANCE = "seq_balance_id";
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_BALANCE)
+    @SequenceGenerator(name = SEQ_BALANCE, sequenceName = SEQ_BALANCE, allocationSize = 1)
     private long balanceId;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "accountId")
+    @JoinColumn(name = "account_id")
     private Account account;
 
     private String currency;
