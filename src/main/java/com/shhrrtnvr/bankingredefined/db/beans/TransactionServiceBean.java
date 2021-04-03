@@ -38,10 +38,10 @@ public class TransactionServiceBean implements TransactionService {
         balance.setAccount(
                 accountRepository.findByAccountId(transactionDto.getAccountId())
         );
-        if (transactionDto.getDirectionOfTransaction().equals("IN")) {
+        if (transactionDto.getDirection().equals("IN")) {
             balance.setBalance(balance.getBalance().add(transactionDto.getAmount()));
         }
-        else if (transactionDto.getDirectionOfTransaction().equals("OUT")) {
+        else if (transactionDto.getDirection().equals("OUT")) {
             if (balance.getBalance().compareTo(transactionDto.getAmount()) != -1) {
                 balance.setBalance(balance.getBalance().subtract(transactionDto.getAmount()));
             }
@@ -51,8 +51,10 @@ public class TransactionServiceBean implements TransactionService {
         Transaction savedTransaction = transactionRepository.save(
                 TransactionMapper.toTransaction(transactionDto, balance)
         );
+        TransactionDto savedTransactionDto = TransactionMapper.toTransactionDto(savedTransaction);
+        savedTransactionDto.setBalance(balance.getBalance());
 
-        return TransactionMapper.toTransactionDto(savedTransaction);
+        return savedTransactionDto;
     }
 
     @Override

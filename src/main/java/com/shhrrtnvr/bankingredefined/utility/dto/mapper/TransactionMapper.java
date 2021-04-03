@@ -10,7 +10,7 @@ public class TransactionMapper {
                 .account(balance.getAccount())
                 .amount(transactionDto.getAmount())
                 .currency(balance.getCurrency())
-                .direction(transactionDto.getDirectionOfTransaction())
+                .direction(transactionDto.getDirection())
                 .build();
     }
 
@@ -20,7 +20,7 @@ public class TransactionMapper {
                 .accountId(transaction.getAccount().getAccountId())
                 .amount(transaction.getAmount())
                 .currency(transaction.getCurrency())
-                .directionOfTransaction(transaction.getDirection())
+                .direction(transaction.getDirection())
                 .build();
     }
 }

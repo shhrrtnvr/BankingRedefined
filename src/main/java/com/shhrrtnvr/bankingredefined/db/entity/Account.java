@@ -17,6 +17,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_ACCOUNT)
     @SequenceGenerator(name = SEQ_ACCOUNT, sequenceName = SEQ_ACCOUNT, allocationSize = 1)
+    @Column(name = "account_id")
     private long accountId;
 
     @ManyToOne(optional = false)

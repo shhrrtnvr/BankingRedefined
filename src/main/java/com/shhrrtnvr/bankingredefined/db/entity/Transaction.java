@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class Transaction {
     private static final String SEQ_TRANSACTION = "seq_transaction_id";
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_TRANSACTION)
     @SequenceGenerator(name = SEQ_TRANSACTION, sequenceName = SEQ_TRANSACTION, allocationSize = 1)
     private long transactionId;
 

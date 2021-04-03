@@ -16,6 +16,6 @@ public class TransactionDto {
     private Long accountId;
     private BigDecimal amount;
     private String currency;
-    private String directionOfTransaction;
-    private BigDecimal balanceAfterTransaction;
+    private String direction;
+    private BigDecimal balance;
 }
